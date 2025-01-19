@@ -41,13 +41,13 @@ function SignUp() {
 
         <form onSubmit={handleSubmit}>
            {/* Display Errors */}
-           {errors && (
-            <div className="mb-4 text-red-500 text-sm">
-              {errors.map((error, index) => (
-                <p key={index}>{error}</p>
-              ))}
-            </div>
-          )}
+           {Array.isArray(errors) && errors.length > 0 && (
+  <div className="mb-4 text-red-500 text-sm">
+    {errors.map((error, index) => (
+      <p key={index}>{error}</p>
+    ))}
+  </div>
+)}
           {/* Full Name */}
           <div className="mb-4">
             <label htmlFor="name" className="block text-sm font-medium text-gray-700">Full Name</label>
