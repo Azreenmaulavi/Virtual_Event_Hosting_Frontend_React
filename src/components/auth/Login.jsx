@@ -49,6 +49,7 @@ function Login() {
               placeholder="youremail@example.com"
               className="mt-2 p-3 w-full border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
+            {errors.email && <p className="text-sm text-red-500 mt-1">{errors.email}</p>}
           </div>
 
           {/* Password */}
@@ -68,6 +69,7 @@ function Login() {
             />
             {showPassword && <span onClick={() => setShowPassword(!showPassword)} className="absolute top-1/2 right-4 cursor-pointer">👁️</span>}
             <p className="text-sm text-gray-500 mt-1">Password Strength: {passwordStrength}</p>
+            {errors.password && <p className="text-sm text-red-500 mt-1">{errors.password}</p>}
           </div>
 
           {/* Login Button */}

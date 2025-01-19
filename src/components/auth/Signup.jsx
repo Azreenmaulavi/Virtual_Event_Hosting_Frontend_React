@@ -40,6 +40,14 @@ function SignUp() {
         <h2 className="text-3xl font-semibold text-center text-gray-800 mb-6">Sign Up</h2>
 
         <form onSubmit={handleSubmit}>
+           {/* Display Errors */}
+           {errors && (
+            <div className="mb-4 text-red-500 text-sm">
+              {errors.map((error, index) => (
+                <p key={index}>{error}</p>
+              ))}
+            </div>
+          )}
           {/* Full Name */}
           <div className="mb-4">
             <label htmlFor="name" className="block text-sm font-medium text-gray-700">Full Name</label>
